@@ -1,8 +1,8 @@
 # Shopping List Price Extractor
 
-<img size=25% alt="ggiga-small" src="https://github.com/user-attachments/assets/73f57380-e2ff-404b-a53e-beb24056230b" />
+<img size=25% alt="ggIGA" src="https://github.com/user-attachments/assets/f8bd6a09-271f-4b5a-87c4-58d1fff708ab" />
 
-A Tampermonkey userscript that extracts item names, quantities, and prices from online grocery shopping trolleys and calculates the total cost.
+A Tampermonkey userscript that extracts item names, quantities, weight/vol., and prices from online grocery shopping trolleys and calculates the total cost.
 
 ## Features
 
@@ -28,8 +28,9 @@ A Tampermonkey userscript that extracts item names, quantities, and prices from 
 1. Navigate to a supported grocery website's trolley/cart page
 2. Add items to your trolley as normal
 3. Click the "Extract Shopping List" button that appears in the top-right corner
-4. View your itemised list with quantities, prices, and total cost
-5. Use "Copy List" to copy the formatted shopping list to your clipboard
+4. If you add more/remove items while on the shopping basket page, click the refresh page button to update the extractor
+5. View your itemised list with quantities, prices, and total cost
+6. Use "Copy List" to copy the formatted shopping list to your clipboard
 
 ## Output Format
 
