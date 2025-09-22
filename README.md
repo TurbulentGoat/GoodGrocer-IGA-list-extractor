@@ -9,8 +9,7 @@ A Tampermonkey userscript that extracts item names, quantities, weight/vol., and
 - Extracts product names, quantities, sizes, and individual prices
 - Calculates total cost across all items
 - Displays results in a convenient popup overlay
-- Copy shopping list to clipboard functionality, e.g.
-<img size=20% alt="image" src="https://github.com/user-attachments/assets/72eec2f1-e86e-44c7-8cc7-f9b46302c0d8" />  
+- Copy shopping list to clipboard functionality
 
 ## Compatibility
 
@@ -40,6 +39,7 @@ The extracted shopping list includes:
 - Quantity and unit price
 - Calculated total per item
 - Grand total for all items
+  <img size=20% alt="image" src="https://github.com/user-attachments/assets/72eec2f1-e86e-44c7-8cc7-f9b46302c0d8" />  
 
 ## Technical Details
 
