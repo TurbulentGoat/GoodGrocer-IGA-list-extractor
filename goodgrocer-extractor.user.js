@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name         Shopping List Price Extractor
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Extract item names, quantities, prices and calculate total from shopping lists
 // @author       TurbulentGoat
-// @match        https://thegoodgrocereastfremantle.myfoodlink.com/trolley*
 // @match        *://*.myfoodlink.com/trolley*
 // @grant        none
 // ==/UserScript==
@@ -249,16 +248,35 @@
         });
     }
 
+    // Function to check if screen is mobile/small
+    function isMobileScreen() {
+        return window.innerWidth <= 768; // Consider screens 768px and below as mobile/small
+    }
+
     // Function to create extraction button
     function createExtractionButton() {
         const button = document.createElement('button');
         button.innerHTML = 'Extract Shopping List';
-        button.style.cssText = 'position:fixed;top:7.7rem;right:3rem;z-index:10000;background:#572700;color:#fff;border:none;padding:0 9px;border-radius:var(--account-bar-trolley-button-border-radius,5px);cursor:pointer;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.2);height:40px;line-height:40px;';
+
+        // Set initial position based on screen size
+        const isMobile = isMobileScreen();
+        const topPosition = isMobile ? '3.7rem' : '7.7rem';
+
+        button.style.cssText = `position:fixed;top:${topPosition};right:3rem;z-index:10000;background:#572700;color:#fff;border:none;padding:0 9px;border-radius:var(--account-bar-trolley-button-border-radius,5px);cursor:pointer;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.2);height:40px;line-height:40px;`;
 
         button.addEventListener('click', function() {
             const data = extractShoppingListData();
             displayResultsPopup(data);
         });
+
+        // Add resize listener to adjust position when screen size changes
+        const adjustButtonPosition = () => {
+            const isMobile = isMobileScreen();
+            const topPosition = isMobile ? '3.7rem' : '7.7rem';
+            button.style.top = topPosition;
+        };
+
+        window.addEventListener('resize', adjustButtonPosition);
 
         document.body.appendChild(button);
     }
