@@ -1,6 +1,6 @@
 # Shopping List Price Extractor
 
-<img size=25% alt="ggIGA" src="https://github.com/user-attachments/assets/f8bd6a09-271f-4b5a-87c4-58d1fff708ab" />
+<img size=25% alt="ggIGA" src="https://github.com/user-attachments/assets/f8bd6a09-271f-4b5a-87c4-58d1fff708ab" />    
 
 A Tampermonkey userscript that extracts item names, quantities, weight/vol., and prices from online grocery shopping trolleys and calculates the total cost.
 
@@ -9,7 +9,8 @@ A Tampermonkey userscript that extracts item names, quantities, weight/vol., and
 - Extracts product names, quantities, sizes, and individual prices
 - Calculates total cost across all items
 - Displays results in a convenient popup overlay
-- Copy shopping list to clipboard functionality
+- Copy shopping list to clipboard functionality, e.g.
+<img size=20% alt="image" src="https://github.com/user-attachments/assets/72eec2f1-e86e-44c7-8cc7-f9b46302c0d8" />  
 
 ## Compatibility
 
