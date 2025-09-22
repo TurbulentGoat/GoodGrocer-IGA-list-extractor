@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Shopping List Price Extractor
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Extract item names, quantities, prices and calculate total from shopping lists
 // @author       TurbulentGoat
 // @match        *://*.myfoodlink.com/trolley*
@@ -205,19 +205,30 @@
         });
 
         const footer = document.createElement('div');
-        footer.style.cssText = 'background:#f5f5f5;padding:15px;border-top:1px solid #ddd;';
+        footer.style.cssText = 'background:#f5f5f5;padding:15px;border-top:1px solid #ddd;display:flex;justify-content:space-between;align-items:center;';
 
         const totalSpan = document.createElement('strong');
         totalSpan.style.cssText = 'font-size:18px;';
         totalSpan.textContent = 'Total: $' + data.totalPrice;
 
+        const buttonContainer = document.createElement('div');
+        buttonContainer.style.cssText = 'display:flex;gap:10px;';
+
+        const refreshBtn = document.createElement('button');
+        refreshBtn.id = 'refresh-page';
+        refreshBtn.style.cssText = 'background:#007bff;color:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;font-size:14px;';
+        refreshBtn.textContent = 'Refresh Page';
+
         const copyListBtn = document.createElement('button');
         copyListBtn.id = 'copy-list';
-        copyListBtn.style.cssText = 'float:right;background:#572700;color:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;';
+        copyListBtn.style.cssText = 'background:#572700;color:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;font-size:14px;';
         copyListBtn.textContent = 'Copy List';
 
+        buttonContainer.appendChild(refreshBtn);
+        buttonContainer.appendChild(copyListBtn);
+
         footer.appendChild(totalSpan);
-        footer.appendChild(copyListBtn);
+        footer.appendChild(buttonContainer);
 
         popup.appendChild(header);
         popup.appendChild(content);
@@ -227,7 +238,9 @@
         // Event listeners
         closeBtn.addEventListener('click', function() { popup.remove(); });
 
-
+        refreshBtn.addEventListener('click', function() {
+            window.location.reload();
+        });
 
         copyListBtn.addEventListener('click', function() {
             let listText = 'Shopping List (' + data.items.length + ' items)\n\n';
