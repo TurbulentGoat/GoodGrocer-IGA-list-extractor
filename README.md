@@ -38,7 +38,7 @@ The extracted shopping list includes:
 - Item name
 - Quantity and unit price
 - Calculated total per item
-- Grand total for all items
+- Grand total for all items  
   <img size=20% alt="image" src="https://github.com/user-attachments/assets/72eec2f1-e86e-44c7-8cc7-f9b46302c0d8" />  
 
 ## Technical Details
