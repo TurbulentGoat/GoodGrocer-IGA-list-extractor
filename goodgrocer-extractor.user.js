@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Extract item names, quantities, prices and calculate total from shopping lists
-// @author       You
+// @author       TurbulentGoat
 // @match        https://thegoodgrocereastfremantle.myfoodlink.com/trolley*
 // @match        *://*.myfoodlink.com/trolley*
 // @grant        none
